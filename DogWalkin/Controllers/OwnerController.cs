@@ -171,40 +171,9 @@ namespace DogWalkin.Controllers
                 }
             }
         }
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete([FromRoute] int id)
-        {
-            try
-            {
-                using (SqlConnection conn = Connection)
-                {
-                    conn.Open();
-                    using (SqlCommand cmd = conn.CreateCommand())
-                    {
-                        cmd.CommandText = @"DELETE FROM Owner WHERE Id = @id";
-                        cmd.Parameters.Add(new SqlParameter("@id", id));
+   
 
-                        int rowsAffected = cmd.ExecuteNonQuery();
-                        if (rowsAffected > 0)
-                        {
-                            return new StatusCodeResult(StatusCodes.Status204NoContent);
-                        }
-                        throw new Exception("No rows affected");
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                if (!OwnerExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-        }
+
         private bool OwnerExists(int id)
         {
             using (SqlConnection conn = Connection)
