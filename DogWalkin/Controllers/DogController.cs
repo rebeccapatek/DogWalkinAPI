@@ -39,7 +39,7 @@ namespace DogWalkin.Controllers
                 {
                     cmd.CommandText = "SELECT Id, Name, Breed, OwnerId, Notes  FROM DOG";
                     SqlDataReader reader = cmd.ExecuteReader();
-                    List<Dog> dogss = new List<Dog>();
+                    List<Dog> dogs = new List<Dog>();
 
                     while (reader.Read())
                     {

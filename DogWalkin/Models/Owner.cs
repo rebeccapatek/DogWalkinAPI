@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DogWalkers.Models
+namespace DogWalkin.Models
 {
-    class Owner
+    public class Owner
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -14,5 +14,6 @@ namespace DogWalkers.Models
         public string Phone { get; set; }
 
         public Neighborhood Neighborhood { get; set; }
+
     }
 }
