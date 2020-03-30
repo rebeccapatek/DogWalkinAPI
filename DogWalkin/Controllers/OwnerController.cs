@@ -31,7 +31,7 @@ namespace DogWalkin.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get([FromQuery] string q)
         {
             using (SqlConnection conn = Connection)
             {
@@ -39,9 +39,17 @@ namespace DogWalkin.Controllers
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = "SELECT Id, Name, Address, NeighborhoodId, Phone  FROM Owner";
+                    
+                    if (q != null)
+                    {
+                        cmd.CommandText += " WHERE Name LIKE @name";
+                        cmd.Parameters.Add(new SqlParameter("@name", "%" + q + "%"));
+                    }
+
                     SqlDataReader reader = cmd.ExecuteReader();
                     List<Owner> owners = new List<Owner>();
 
+                    
                     while (reader.Read())
                     {
                         Owner owner = new Owner
