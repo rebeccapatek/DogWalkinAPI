@@ -141,7 +141,7 @@ namespace DogWalkin.Controllers
                                             SET Name = @name,
                                                 Address = @address,
                                                 Phone = @phone,
-                                                NieghborhoodId = @neighborhoodId,
+                                                NeighborhoodId = @neighborhoodId
                                                
                                             WHERE Id = @id";
                         cmd.Parameters.Add(new SqlParameter("@name", owner.Name));

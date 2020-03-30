@@ -14,6 +14,7 @@ namespace DogWalkin.Models
         public String Notes { get; set; }
 
         public int OwnerId { get; set; }
+        public Owner Owner { get; set; }
 
 
     }

@@ -128,7 +128,7 @@ namespace DogWalkin.Controllers
                     {
                         cmd.CommandText = @"UPDATE Walker
                                             SET Name = @name,
-                                                NeighborhoodId = @neighborhooodId
+                                                NeighborhoodId = @neighborhoodId
                                                
                                             WHERE Id = @id";
                         cmd.Parameters.Add(new SqlParameter("@name", walker.Name));

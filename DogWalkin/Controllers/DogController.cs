@@ -37,7 +37,7 @@ namespace DogWalkin.Controllers
                 conn.Open();
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
-                    cmd.CommandText = "SELECT Id, Name, Breed, OwnerId, Notes  FROM DOG";
+                    cmd.CommandText = "SELECT d.Id, d.Name, d.Breed, d.OwnerId, d.Notes, o.Name as 'OwnerName', o.Address, o.Phone, o.NeighborhoodId FROM DOG d LEFT JOIN OWNER o ON d.OwnerId=o.Id";
                     SqlDataReader reader = cmd.ExecuteReader();
                     List<Dog> dogs = new List<Dog>();
 
@@ -50,6 +50,14 @@ namespace DogWalkin.Controllers
                             Breed = reader.GetString(reader.GetOrdinal("Breed")),
                             Notes = reader.GetString(reader.GetOrdinal("Notes")),
                             OwnerId = reader.GetInt32(reader.GetOrdinal("OwnerId")),
+                            Owner = new Owner
+                            {
+                                Id = reader.GetInt32(reader.GetOrdinal("Id")),
+                                Name = reader.GetString(reader.GetOrdinal("OwnerName")),
+                                Address = reader.GetString(reader.GetOrdinal("Address")),
+                                NeighborhoodId = reader.GetInt32(reader.GetOrdinal("NeighborhoodId")),
+                                Phone = reader.GetString(reader.GetOrdinal("Phone"))
+                            },
 
 
 
