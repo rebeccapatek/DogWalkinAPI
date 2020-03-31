@@ -59,7 +59,7 @@ namespace DogWalkin.Controllers
                                 Name = reader.GetString(reader.GetOrdinal("NeighborhoodName"))
                             }
 
-                        },
+                        
 
 
 

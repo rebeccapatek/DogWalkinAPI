@@ -8,8 +8,6 @@ C:\Users\rebec\source\repos\DogWalkin\DogWalkin\obj\Debug\netcoreapp3.1\DogWalki
 C:\Users\rebec\source\repos\DogWalkin\DogWalkin\obj\Debug\netcoreapp3.1\DogWalkin.RazorTargetAssemblyInfo.cache
 C:\Users\rebec\source\repos\DogWalkin\DogWalkin\obj\Debug\netcoreapp3.1\staticwebassets\DogWalkin.StaticWebAssets.Manifest.cache
 C:\Users\rebec\source\repos\DogWalkin\DogWalkin\obj\Debug\netcoreapp3.1\staticwebassets\DogWalkin.StaticWebAssets.xml
-C:\Users\rebec\source\repos\DogWalkin\DogWalkin\obj\Debug\netcoreapp3.1\DogWalkin.csproj.CoreCompileInputs.cache
-C:\Users\rebec\source\repos\DogWalkin\DogWalkin\obj\Debug\netcoreapp3.1\DogWalkin.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\rebec\source\repos\DogWalkin\DogWalkin\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\rebec\source\repos\DogWalkin\DogWalkin\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
 C:\Users\rebec\source\repos\DogWalkin\DogWalkin\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
@@ -111,3 +109,7 @@ C:\Users\rebec\source\repos\DogWalkin\DogWalkin\bin\Debug\netcoreapp3.1\runtimes
 C:\Users\rebec\source\repos\DogWalkin\DogWalkin\obj\Debug\netcoreapp3.1\DogWalkin.dll
 C:\Users\rebec\source\repos\DogWalkin\DogWalkin\obj\Debug\netcoreapp3.1\DogWalkin.pdb
 C:\Users\rebec\source\repos\DogWalkin\DogWalkin\obj\Debug\netcoreapp3.1\DogWalkin.genruntimeconfig.cache
+C:\Users\rebec\source\repos\DogWalkin\DogWalkin\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\rebec\source\repos\DogWalkin\DogWalkin\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\rebec\source\repos\DogWalkin\DogWalkin\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\rebec\source\repos\DogWalkin\DogWalkin\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
