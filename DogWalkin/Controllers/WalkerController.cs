@@ -30,14 +30,19 @@ namespace DogWalkin.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get([FromQuery] int? neighborhoodId)
         {
             using (SqlConnection conn = Connection)
             {
                 conn.Open();
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
-                    cmd.CommandText = "SELECT Id, Name, NeighborhoodId  FROM Walker";
+                    cmd.CommandText = "SELECT Id, Name, NeighborhoodId FROM Walker w LEFT JOIN Neighborhood n ON n.Id=w.NeighborhoodId WHERE 1=1";
+                    if (neighborhoodId != null)
+                    {
+                        cmd.CommandText += " AND NeighborhoodId = @neighborhoodId";
+                        cmd.Parameters.Add(new SqlParameter("@neighborhoodId", neighborhoodId));
+                    }
                     SqlDataReader reader = cmd.ExecuteReader();
                     List<Walker> walkers = new List<Walker>();
 
@@ -48,6 +53,15 @@ namespace DogWalkin.Controllers
                             Id = reader.GetInt32(reader.GetOrdinal("Id")),
                             Name = reader.GetString(reader.GetOrdinal("Name")),
                             NeighborhoodId = reader.GetInt32(reader.GetOrdinal("NeighborhoodId")),
+                            Neighborhood = new Neighborhood
+                            {
+                                Id = reader.GetInt32(reader.GetOrdinal("NeighborhoodId")),
+                                Name = reader.GetString(reader.GetOrdinal("NeighborhoodName"))
+                            }
+
+                        },
+
+
 
 
                         };
